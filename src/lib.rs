@@ -119,9 +119,9 @@ impl<'a> DeltaProcessor<'a> {
             };
 
             let id = if groupings.is_empty() {
-                format!("{}", timestamp)
+                format!("{}-{}", timestamp, interval)
             } else {
-                format!("{}-{}", timestamp, groupings)
+                format!("{}-{}-{}", timestamp, interval, groupings)
             };
 
             let row = self.tables.update_row(entity, &id);
